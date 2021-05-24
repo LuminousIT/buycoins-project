@@ -117,3 +117,7 @@ function displayUserRepo() {
 }
 
 displayUserRepo();
+
+function signout() {
+  localStorage.clear();
+}
