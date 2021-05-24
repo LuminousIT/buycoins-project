@@ -26,9 +26,10 @@ handleSubmit();
 const baseUrl = "https://api.github.com/graphql";
 const headers = {
   "Content-Type": "application/json",
-  Authorization: `bearer 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`,
+  Authorization: `bearer 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`,
 };
-
+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;
+// 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
 function fetchUserRepositories(username) {
   console.log("username", typeof username);
   const githubQueryToFetch20Repositories = {
