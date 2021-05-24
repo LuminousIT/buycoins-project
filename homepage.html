@@ -1,0 +1,215 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link type="text/css" href="./css/base.css" rel="stylesheet" />
+    <title>Your Repositories</title>
+  </head>
+  <body>
+    <header class="header-nav">
+      <div class="icon-nav-container">
+        <img
+          src="./image/hamburger.svg"
+          class="nav-dropdown-icon"
+          onclick="myFunction()"
+          style="fill: white"
+        />
+        <a href="./login.html"
+          ><span
+            class="iconify"
+            data-icon="octicon:mark-github-16"
+            data-inline="false"
+            id="github-logo"
+          >
+          </span
+        ></a>
+        <div class="nav-items">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search or jump to..."
+            class="search-field"
+          />
+          <ul class="header-nav-list" id="nav-list">
+            <li class="li-full">Pull Requests</li>
+            <li class="li-abbrev">Pull Requests</li>
+            <li>Issues</li>
+            <li>Marketplace</li>
+            <li>Explore</li>
+          </ul>
+        </div>
+      </div>
+      <div class="notif-nav-container">
+        <span
+          class="iconify"
+          data-icon="octicon:bell-24"
+          data-inline="false"
+        ></span>
+        <span class="dropdown-icon mid-dropdown-icon">
+          <span class="iconify" data-icon="octicon:plus-16" data-inline="false">
+          </span>
+          <i class="fa fa-caret-down"></i>
+          <div class="dropdown">
+            <a href="">New Repository</a>
+            <a href="">Import Repository</a>
+            <a href="">New Gist</a>
+            <a href="">New Organization</a>
+            <a href="">New Project</a>
+          </div>
+        </span>
+
+        <span class="dropdown-icon">
+          <img src="./image/self.png" id="profImg2" />
+          <i class="fa fa-caret-down"></i>
+          <div class="dropdown">
+            <a href=""
+              >Signed in as <br />
+              <span id="bold-text"></span>
+            </a>
+
+            <div class="hr-line"></div>
+            <a href="">Your Profile</a>
+            <a href="">Your Repositories</a>
+            <a href="">Your Organization</a>
+            <a href="">Your Projects</a>
+            <a href="">Your Stars</a>
+            <a href="">Your gists</a>
+            <div class="hr-line"></div>
+            <a href="">Feature Preview</a>
+            <a href="">Help</a>
+            <a href="">Settings</a>
+            <a href="">Sign out</a>
+          </div>
+        </span>
+      </div>
+    </header>
+
+    <main class="main-section" id="main-section">
+      <div class="side-one">
+        <div class="profile-header-section">
+          <div class="circular-img">
+            <img src="./image/self.png" class="prof-img" id="profImg" />
+            <span class="set-status">
+              <img src="./image/smiley.svg" />
+            </span>
+          </div>
+          <div class="name" id="profile-info"></div>
+        </div>
+
+        <div class="profile-bio">
+          <button class="btn status">
+            <img
+              src="./image/smiley.svg"
+              style="text-align: center; vertical-align: middle"
+            />
+            Set Status
+          </button>
+
+          <button class="btn">Edit Profile</button>
+
+          <div class="follow">
+            <div class="follow-cont">
+              <img src="./image/people.svg" />
+              <p><span class="bold-text" id="follower"></span>followers</p>
+            </div>
+            <div class="follow-cont">
+              <img />
+              <p><span class="bold-text" id="following"></span>following</p>
+            </div>
+            <div class="follow-cont">
+              <img src="./image/star.svg" />
+              <p><span class="bold-text" id="starred"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-two">
+        <div class="tab">
+          <a
+            href="#"
+            class="tab-link"
+            id="overview-link"
+            onclick="viewTab(event, 'overview')"
+          >
+            Overview
+          </a>
+          <a
+            href="#"
+            class="tab-link active"
+            id="repositories-link"
+            onclick="viewTab(event, 'repositories')"
+          >
+            Repositories
+          </a>
+          <a
+            href="#"
+            class="tab-link"
+            id="projects-link"
+            onclick="viewTab(event, 'projects')"
+          >
+            Projects
+          </a>
+          <a
+            href="#"
+            class="tab-link"
+            id="packages-link"
+            onclick="viewTab(event, 'packages')"
+          >
+            Packages
+          </a>
+        </div>
+
+        <div id="overview" class="tab-content"></div>
+
+        <div id="repositories" class="tab-content">
+          <div class="repositories-search-section">
+            <input
+              type="text"
+              name="search"
+              placeholder="Find a repository"
+              class="main-search-field"
+            />
+            <div class="repositories-filter-params">
+              <div class="repositories-filter-params-one">
+                <a href="#" class="main-search-btn">
+                  Type: All <span><i class="fa fa-caret-down"></i></span>
+                </a>
+                <a href="#" class="main-search-btn">
+                  Language: All <span><i class="fa fa-caret-down"></i></span>
+                </a>
+                <a href="#" class="main-search-btn">
+                  Sort <span><i class="fa fa-caret-down"></i></span>
+                </a>
+              </div>
+
+              <a href="#" class="main-search-btn new-repo">
+                <span>
+                  <img
+                    src="./image/repo-white.svg"
+                    alt=""
+                    style="vertical-align: middle"
+                  />
+                </span>
+                New
+              </a>
+            </div>
+          </div>
+          <div class="card-list-container" id="card-list"></div>
+        </div>
+
+        <div id="projects" class="tab-content"></div>
+
+        <div id="packages" class="tab-content"></div>
+      </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
